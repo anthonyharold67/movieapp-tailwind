@@ -48,6 +48,16 @@ const Navbar = () => {
                 className="dropdown-menu min-w-max absolute bg-white text-base z-50 float-left py-2 list-none text-left rounded-lg shadow-lg mt-1 hidden m-0 bg-clip-padding border-none left-auto right-0"
                 aria-labelledby="dropdownMenuButton2"
               >
+                {currentUser ? (<li>
+                  <span
+                    className="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100"
+                    role="button"
+                    onClick={() => logOut()}
+                  >
+                    Logout
+                  </span>
+                </li> ) : (
+                  <>
                 <li>
                   <Link
                     className="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100"
@@ -64,15 +74,8 @@ const Navbar = () => {
                     Login
                   </Link>
                 </li>
-                <li>
-                  <span
-                    className="dropdown-item text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-700 hover:bg-gray-100"
-                    role="button"
-                    onClick={() => logOut()}
-                  >
-                    Logout
-                  </span>
-                </li>
+                    </>)
+                }
               </ul>
             </div>
           </div>
